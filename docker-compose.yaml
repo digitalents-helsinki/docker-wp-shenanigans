@@ -12,21 +12,19 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
 
-  wordpress:
+  digitalents1:
     depends_on:
       - db
-    image: wordpress:latest
-    volumes:
-      - ./theme:/var/www/html/wp-content/themes/digiloikka
+    build: .
     ports:
       - "8000:80"
     restart: always
+    volumes:
+      - ./theme:/var/www/html/wp-content/themes/digiloikka
     environment:
+      NO_WP_CONTENT: "true"
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_CONFIG_EXTRA: |
-        /* Multisite */
-        define('FS_METHOD', 'direct');
 volumes:
   db_data: {}
