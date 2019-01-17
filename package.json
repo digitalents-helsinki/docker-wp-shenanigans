@@ -1,0 +1,10 @@
+{
+  "name": "wordpress-digiloikka",
+  "version": "1.0.0",
+  "scripts": {
+    "build:up": "./build.sh up",
+    "build:down": "./build.sh down",
+    "build:restart": "./build.sh restart",
+    "build:flush": "./build.sh down volumes"
+  }
+}
