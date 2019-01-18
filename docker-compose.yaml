@@ -9,12 +9,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - type: bind
-        source: ./theme
-        target: /var/www/html/wp-content/themes/digiloikka
-      - type: bind
-        source: ./gutenberg-blocks
-        target: /var/www/html/wp-content/plugins/digiloikka-blocks
+      - ./wp-content/:/var/www/html/wp-content/
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${DB_USER}
