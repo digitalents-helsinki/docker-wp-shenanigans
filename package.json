@@ -1,0 +1,16 @@
+{
+  "name": "wordpress-doacola",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Doacola <jami.lohilahti@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "setup:linux": "./setup.sh linux",
+    "fresh:linux": "docker-compose down --volumes && sudo rm -r plugins/* themes/* uploads/* && ./setup.sh linux",
+    "dev:stop": "docker-compose stop",
+    "dev:reboot": "docker-compose restart",
+    "dev:clean": "sudo rm -r plugins/* themes/* uploads/*",
+    "sql:backup": "docker-compose exec db sh -c 'mysqldump --all-databases > /backups/mysql/wordpress/dump.sql -u root -p'"
+  }
+}

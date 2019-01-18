@@ -1,0 +1,5 @@
+.env
+themes/*
+plugins/*
+media/*
+uploads/*
