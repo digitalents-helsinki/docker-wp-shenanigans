@@ -39,7 +39,7 @@ elif [[ "$1" == down ]]; then
   if [[ "$2" == volumes ]]; then
     # ./build.sh down volumes
     down_volumes_func
-    sudo rm -r plugins/* themes/* uploads/*
+    rm -rf plugins/* themes/* uploads/*
   else
     # ./build.sh down 
     down_func

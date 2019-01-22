@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev:clean": "sudo rm -r plugins/* themes/* uploads/*",
+    "dev:clean": "rm -rf plugins/* themes/* uploads/*",
     "sql:backup": "./build.sh exportdb",
     "sql:import": "./build.sh importdb",
     "build:up": "./build.sh up",
